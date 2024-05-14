@@ -1,3 +1,8 @@
+import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 class Agenda {
     private Map<String, List<Compromisso>> compromissos;
 
