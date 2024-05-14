@@ -1,5 +1,3 @@
-import java.util.*;
-
 // Modelo para representar um evento
 class Evento {
     private String nome;
