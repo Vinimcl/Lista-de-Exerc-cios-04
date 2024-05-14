@@ -1,5 +1,9 @@
-// Controlador para gerenciar as operações do estacionamento
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 class EstacionamentoController {
+    private static final int CAPACIDADE_PADRAO = 10;
     private List<Veiculo> vagas;
     private int valorPorPeriodo;
 
@@ -8,8 +12,18 @@ class EstacionamentoController {
         this.valorPorPeriodo = valorPorPeriodo;
     }
 
+    public void imprimirCapacidadeVeiculos() {
+        int capacidadeAtual = vagas.size();
+        System.out.println("Capacidade máxima do estacionamento: " + CAPACIDADE_PADRAO);
+        System.out.println("Número de veículos estacionados: " + capacidadeAtual);
+    }
+
+    public EstacionamentoController(int valorPorPeriodo) {
+        this(CAPACIDADE_PADRAO, valorPorPeriodo);
+    }
+
     public boolean entradaVeiculo(Veiculo veiculo) {
-        if (vagas.size() < 10) {
+        if (vagas.size() < vagas.size()) { // Usando vagas.size() para verificar a capacidade máxima
             vagas.add(veiculo);
             return true;
         } else {
@@ -18,15 +32,14 @@ class EstacionamentoController {
     }
 
     public Veiculo saidaVeiculo(String placa) {
-        Iterator<Veiculo> iterator = vagas.iterator();
-        while (iterator.hasNext()) {
+        for (Iterator<Veiculo> iterator = vagas.iterator(); iterator.hasNext();) {
             Veiculo veiculo = iterator.next();
             if (veiculo.getPlaca().equals(placa)) {
                 iterator.remove();
                 return veiculo;
             }
         }
-        return null; // Veículo não encontrado
+        throw new IllegalArgumentException("Veículo não encontrado.");
     }
 
     public int getNumeroVeiculos() {
