@@ -1,7 +1,6 @@
 package br.edu.up.modelos;
-import java.lang.Math;
 
-class Ponto {
+public class Ponto {
     private double x;
     private double y;
 
@@ -33,5 +32,7 @@ class Ponto {
         return y;
     }
 
+    public void setY(double y) {
         this.y = y;
     }
+}
