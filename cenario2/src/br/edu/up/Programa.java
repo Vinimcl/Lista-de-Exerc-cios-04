@@ -1,6 +1,7 @@
 package br.edu.up;
 
 import br.edu.up.modelos.Ponto;
+
 public class Programa {
 
     public static void main(String[] args) {
