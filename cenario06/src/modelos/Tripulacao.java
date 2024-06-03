@@ -1,5 +1,7 @@
 package modelos;
 
+import br.edu.up.modelos.Pessoa;
+
 public class Tripulacao extends Pessoa {
     private String identificacaoAeronautica;
     private String matriculaFuncionario;

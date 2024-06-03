@@ -1,5 +1,7 @@
 package modelos;
 
+import br.edu.up.modelos.Pessoa;
+
 public class Passageiro extends Pessoa {
     private String identificadorBagagem;
     private Passagem passagem;
