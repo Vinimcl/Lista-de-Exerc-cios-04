@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class Disciplina {
     private String nome;
     private String identificador;

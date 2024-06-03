@@ -13,7 +13,7 @@ class competencias {
     public static final String NAO_ATINGIDA = "Não Atingida";
 
     // Construtor
-    public Competencia(String nome, String tipo) {
+    public void Competencia(String nome, String tipo) {
         this.nome = nome;
         this.tipo = tipo;
         this.situacao = NAO_ATINGIDA; // Situação inicial não atingida
