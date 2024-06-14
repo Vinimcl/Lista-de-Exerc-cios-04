@@ -1,37 +1,45 @@
-
+// Contato.java
 public abstract class Contato {
-    private int codigo;
-    private String nome;
-    private String telefone;
+    private String bairro;
+    private String cep;
+    private Cidade cidade;
 
-    public Contato(int codigo, String nome, String telefone) {
-        this.codigo = codigo;
-        this.nome = nome;
-        this.telefone = telefone;
+    public Contato(String bairro, String cep, Cidade cidade) {
+        this.bairro = bairro;
+        this.cep = cep;
+        this.cidade = cidade;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public String getBairro() {
+        return bairro;
     }
 
-    public String getNome() {
-        return nome;
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getCep() {
+        return cep;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public Cidade getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
     }
 
     @Override
     public String toString() {
-        return "Código: " + codigo + ", Nome: " + nome + ", Telefone: " + telefone;
+        return "Contato{" +
+                "bairro='" + bairro + '\'' +
+                ", cep='" + cep + '\'' +
+                ", cidade=" + cidade +
+                '}';
     }
 }

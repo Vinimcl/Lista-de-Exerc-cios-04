@@ -1,9 +1,10 @@
-
+// Programa.java
 public class Programa {
+
     public static void main(String[] args) {
-        Agenda agenda = new Agenda();
-        View view = new View();
-        Controller controller = new Controller(agenda, view);
+        ContatosView view = new ContatosView();
+        ContatosController controller = new ContatosController(view);
+
         controller.iniciar();
     }
 }
