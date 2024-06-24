@@ -1,3 +1,5 @@
+package up.control
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,10 +50,12 @@ public class SegurosController {
 
     private void incluirSeguroVida() {
         String apolice = obterApolice();
-        if (apolice == null) return;
+        if (apolice == null)
+            return;
 
         Segurado segurado = criarSegurado();
-        if (segurado == null) return;
+        if (segurado == null)
+            return;
 
         double vlrApolice = view.lerDouble("Digite o valor da apólice: ");
         LocalDate dtaInicio = view.lerData("Digite a data de início (YYYY-MM-DD): ");
@@ -66,10 +70,12 @@ public class SegurosController {
 
     private void incluirSeguroVeiculo() {
         String apolice = obterApolice();
-        if (apolice == null) return;
+        if (apolice == null)
+            return;
 
         Segurado segurado = criarSegurado();
-        if (segurado == null) return;
+        if (segurado == null)
+            return;
 
         double vlrApolice = view.lerDouble("Digite o valor da apólice: ");
         LocalDate dtaInicio = view.lerData("Digite a data de início (YYYY-MM-DD): ");
@@ -77,7 +83,8 @@ public class SegurosController {
         boolean temCarroReserva = view.lerBoolean("O seguro possui carro reserva?");
         boolean cobreVidros = view.lerBoolean("O seguro cobre vidros?");
 
-        SeguroVeiculo seguro = new SeguroVeiculo(apolice, segurado, vlrApolice, dtaInicio, vlrFranquia, temCarroReserva, cobreVidros);
+        SeguroVeiculo seguro = new SeguroVeiculo(apolice, segurado, vlrApolice, dtaInicio, vlrFranquia, temCarroReserva,
+                cobreVidros);
         if (adicionarSeguro(seguro)) {
             view.mostrarMensagem("Seguro de veículo incluído com sucesso!");
         }
